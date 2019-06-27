@@ -5,7 +5,7 @@
 Connect to a NTP server, here is how:
 
 ```cpp
-#include <NTPClient.h>
+#include <NTPClientByjulfi.h>
 // change next line to use with another board/shield
 #include <ESP8266WiFi.h>
 //#include <WiFi.h> // for WiFi shield
@@ -40,7 +40,12 @@ void setup(){
 void loop() {
   timeClient.update();
 
-  Serial.println(timeClient.getFormattedTime());
+  Serial.print("Formatted time : ");Serial.println(timeClient.getFormattedTime());
+
+  /* Newly added methods */
+  Serial.print("The month's number: ");Serial.println(timeClient.getMonth());
+  Serial.print("The year: ");Serial.println(timeClient.getYear());
+  Serial.print("The actual day's number: ");Serial.println(timeClient.getRealDay());
 
   delay(1000);
 }
