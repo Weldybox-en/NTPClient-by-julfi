@@ -1,6 +1,4 @@
-# NTPClient
-
-[![Build Status](https://travis-ci.org/arduino-libraries/NTPClient.svg?branch=master)](https://travis-ci.org/arduino-libraries/NTPClient)
+# NTPClient by julfi
 
 Connect to a NTP server, here is how:
 
@@ -50,4 +48,3 @@ void loop() {
   delay(1000);
 }
 ```
-# NTPClient-by-julfi
