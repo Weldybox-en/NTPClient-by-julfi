@@ -1,4 +1,4 @@
-#include <NTPClient.h>
+#include <NTPClientByjulfi.h>
 // change next line to use with another board/shield
 #include <ESP8266WiFi.h>
 //#include <WiFi.h> // for WiFi shield
@@ -10,14 +10,16 @@ const char *password = "<PASSWORD>";
 
 WiFiUDP ntpUDP;
 
-// You can specify the time server pool and the offset (in seconds, can be
-// changed later with setTimeOffset() ). Additionaly you can specify the
-// update interval (in milliseconds, can be changed using setUpdateInterval() ).
-NTPClient timeClient(ntpUDP, "europe.pool.ntp.org", 3600, 60000);
+// By default 'time.nist.gov' is used with 60 seconds update interval and
+// no offset
+NTPClient timeClient(ntpUDP);
+
+// You can specify the time server pool and the offset, (in seconds)
+// additionaly you can specify the update interval (in milliseconds).
+// NTPClient timeClient(ntpUDP, "europe.pool.ntp.org", 3600, 60000);
 
 void setup(){
   Serial.begin(115200);
-
   WiFi.begin(ssid, password);
 
   while ( WiFi.status() != WL_CONNECTED ) {
@@ -31,7 +33,12 @@ void setup(){
 void loop() {
   timeClient.update();
 
-  Serial.println(timeClient.getFormattedTime());
+  Serial.print("Formatted time : ");Serial.println(timeClient.getFormattedTime());
+
+  /* Newly added methods */
+  Serial.print("The month's number: ");Serial.println(timeClient.getMonth());
+  Serial.print("The year: ");Serial.println(timeClient.getYear());
+  Serial.print("The actual day's number: ");Serial.println(timeClient.getRealDay());
 
   delay(1000);
 }
