@@ -1,5 +1,15 @@
 # NTPClient by julfi
 
+## Installing
+
+The installation is slightly different from the original. This one had to be installed manually!
+
+- First, download the archive librairy
+- Copy and past the directory in your IDE librairy managment directory. (Ardiuno IDE or Platformio)
+- I personnaly use platformio and the correct directory is located here by default: *C:\Users\#username\.platformio\lib*
+
+## Typical use
+
 Connect to a NTP server, here is how:
 
 ```cpp
