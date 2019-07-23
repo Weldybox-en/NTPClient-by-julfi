@@ -65,3 +65,12 @@ void loop() {
   delay(1000);
 }
 ```
+
+ ## Support me
+ 
+I've decide to share for free my work because i've learn tanks to that! For me, sharing project like this for free accelerate the knowledge corculation and that very cool.
+
+But i'm student and like every student i'm broken :(
+So, if you can, feel free to buy me a coffe :D
+
+[![paypal](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jvZuQ8SYo)
